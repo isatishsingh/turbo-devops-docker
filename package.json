@@ -7,10 +7,10 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "db:generate": "turbo run db:generate --filter=@repo/db",
-    "db:migrate": "turbo run db:migrate --filter=@repo/db",
-    "db:push": "turbo run db:push --filter=@repo/db",
-    "db:studio": "turbo run db:studio --filter=@repo/db"
+    "start:backend": "cd apps/backend && bun run index.ts",
+    "start:ws": "cd apps/websocket && bun run index.ts",
+    "start:frontend": "cd apps/frontend && bun run start",
+    "generate:db": "cd packages/db && bunx prisma generate"
   },
   "devDependencies": {
     "dotenv-cli": "^11.0.0",
