@@ -11,6 +11,8 @@ COPY ./turbo.json ./turbo.json
 COPY ./apps/http-server ./apps/http-server
 
 RUN bun install
+
+ENV DATABASE_URL="postgresql://postgres:mysceret@postgres:5432/dummy"
 RUN bun run db:generate
 
 EXPOSE 3002
