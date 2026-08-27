@@ -19,8 +19,8 @@ jobs:
         uses: docker/buid-push-action@v4
         with:
           context: .
-          build-args: 
-            - DATABASE_URL=${{ secret.ENVIRONMENT_VARIABLE }}
+          build-args:
+            - DATABASE_URL=${{ secrets.ENVIRONMENT_VARIABLE }}
           file: ./docker/Dockerfile.ws
           push: true
           tags: mendcatdocker/user-app-ws:${{ github.sha}}

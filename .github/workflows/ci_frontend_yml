@@ -20,7 +20,7 @@ jobs:
         with:
           context: .
           build-args:
-            - DATABASE_URL=${{ secret.ENVIRONMENT_VARIABLE }}
+            - DATABASE_URL=${{ secrets.ENVIRONMENT_VARIABLE }}
           file: ./docker/Dockerfile.frontend
           push: true
           tags: mendcatdocker/user-app-frontend:${{ github.sha}}
