@@ -23,4 +23,4 @@ jobs:
           build-args: |
             DATABASE_URL=${{ secrets.ENVIRONMENT_VARIABLE }}
           push: true
-          tags: mendcatdocker/user-app-frontend:${{ github.sha}}
+          tags: mendcatdocker/user-app-frontend:${{ github.sha }}
