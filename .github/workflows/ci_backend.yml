@@ -1,4 +1,4 @@
-name: Deploy the backend
+name: CI Backend APP
 on:
   push:
     branches: [main]
@@ -19,8 +19,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+          file: ./docker/Dockerfile.backend
           build-args:
             - DATABASE_URL=${{ secrets.ENVIRONMENT_VARIABLE }}
-          file: ./docker/Dockerfile.backend
           push: true
           tags: mendcatdocker/user-app-backend:${{ github.sha }}

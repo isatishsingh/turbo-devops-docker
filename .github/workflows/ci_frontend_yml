@@ -1,9 +1,9 @@
 name: CI - Nextjs APP
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 jobs:
-  builds:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Chekout the code
@@ -19,8 +19,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+          file: ./docker/Dockerfile.frontend
           build-args:
             - DATABASE_URL=${{ secrets.ENVIRONMENT_VARIABLE }}
-          file: ./docker/Dockerfile.frontend
           push: true
           tags: mendcatdocker/user-app-frontend:${{ github.sha}}
