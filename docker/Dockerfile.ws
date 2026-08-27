@@ -12,8 +12,9 @@ COPY ./turbo.json ./turbo.json
 
 COPY ./apps/ws-server ./apps/ws-server
 
-ENV DATABASE_URL=${DATABASE_URL}
 RUN bun install
+
+ENV DATABASE_URL=${DATABASE_URL}
 RUN bun run db:generate
 
 EXPOSE 3001
