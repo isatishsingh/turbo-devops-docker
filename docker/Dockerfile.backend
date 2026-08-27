@@ -2,6 +2,8 @@ FROM oven/bun:1
 
 WORKDIR /usr/src/app
 
+ARG DATABASE_URL
+
 COPY ./packages ./packages
 COPY ./bun.lock ./bun.lock
 
@@ -12,7 +14,7 @@ COPY ./apps/http-server ./apps/http-server
 
 RUN bun install
 
-ENV DATABASE_URL="postgresql://postgres:mysceret@postgres:5432/dummy"
+ENV DATABASE_URL=${DATABASE_URL}
 RUN bun run db:generate
 
 EXPOSE 3002
