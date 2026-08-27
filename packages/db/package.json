@@ -11,7 +11,7 @@
     "@repo/typescript-config": "*"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build": "node init && tsc -b",
     "db:generate": "bun --bun run prisma generate",
     "db:migrate": "bun --bun run prisma migrate dev",
     "db:push": "bun --bun run prisma db push",

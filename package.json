@@ -2,15 +2,15 @@
   "name": "turbo-devops",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
+    "build": "node init && turbo run build",
+    "dev": "node init && turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "db:generate": "cd packages/db && npx prisma generate && cd ../..",
-    "start:web": "cd apps/web && bun run start",
-    "start:backend": "cd apps/http-server/src && bun run index.ts",
-    "start:websocket": "cd apps/ws-server/src && bun run index.ts"
+    "start:web": "node init && cd apps/web && bun run start",
+    "start:backend": "node init && cd apps/http-server/src && bun run index.ts",
+    "start:websocket": "node init && cd apps/ws-server/src && bun run index.ts"
   },
   "devDependencies": {
     "dotenv-cli": "^11.0.0",
